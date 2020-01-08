@@ -34,7 +34,7 @@ public class Squad {
         return cause;
     }
 
-    public static Squad findBySquadId(int squadId) {
+    public static Squad getBySquadId(int squadId) {
         return instances.get(squadId - 1);
     }
 

@@ -1,58 +1,39 @@
+{{#block "header"}}
 <!DOCTYPE html>
 <html>
 <head>
     <title>{{#block "title"}}Heroes Galore{{/block}}</title>
-    <link rel='stylesheet' href='/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="stylesheet" href="/css/jquery-ui-1.10.3.css" />
+    <link href="https://fonts.googleapis.com/css?family=Gelasio|Inria+Serif|Lato|Open+Sans|Source+Sans+Pro&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    {{if index.hbs}}
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link active" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/hero">Heroes</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/squad">Squads</a>
-        </li>
-    </ul>
-    {{elseif hero.hbs}}
+{{/block}}
     <ul class="nav nav-pills">
         <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="/hero">Heroes</a>
+            <a class="nav-link" href="/squad">Create Squad</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/squad">Squads</a>
+            <a class="nav-link" href="/hero">Create Hero</a>
         </li>
     </ul>
-    {{elseif squad.hbs}}
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="/hero">Heroes</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/squad">Squads</a>
-        </li>
-    </ul>
-
 
     <div class="container">
 
-    <div class="page-header">
-        <img src="/images/herocover.png" width="70%">
-        <h1>Welcome to Heroes Galore<br><small>Recruit a well-balanced team of superheroes and assign them super powers and weaknesses</small></h1>
-    </div>
-
     <div class="col-md-12">
+
+        <div class="page-header">
+            <h1>Welcome to Heroes Galore<br><small>Recruit a well-balanced team of superheroes and assign them super powers and weaknesses</small></h1>
+        </div>
+        <hr class="hr">
         {{#block "content"}}
+
         {{/block}}
     </div>
 
@@ -60,6 +41,9 @@
 
 
 {{#block "footer"}}
+    <footer class="footer">
+        <img src="/images/herocover.png" class="center">
+    </footer>
 {{/block}}
 </body>
 </html>
