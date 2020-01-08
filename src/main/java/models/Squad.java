@@ -57,4 +57,14 @@ public class Squad {
     public void clearAllSquadMembers(){
             getSquadMembers().clear();
         }
+
+    public static Squad setUpNewSquad(){
+        return new Squad(3,"Yellow","Positivity");
+    }
+
+    public static Squad setUpNewSquad1(){
+        return new Squad(5, "Red", "Danger");
+    }
+
+
 }
