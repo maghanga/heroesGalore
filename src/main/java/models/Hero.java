@@ -37,4 +37,16 @@ public class Hero {
     public static ArrayList<Hero> getAllHeroes(){
         return instances;
     }
+
+    public static void clearHeroes(){
+        instances.clear();
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public static Hero findById(int id){
+        return instances.get(id - 1);
+    }
 }

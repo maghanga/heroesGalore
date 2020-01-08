@@ -1,18 +1,23 @@
 package models;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Squad {
     private int maxSize;
     private String squadName;
     private String cause;
-    private static ArrayList<Squad> allSquads = new ArrayList<>();
+    private int squadId;
+    private ArrayList<Hero> squadMembers;
+    private static ArrayList<Squad> instances = new ArrayList<>();
 
-    public Squad(int maxSize, String squadName, String cause){
-        this.maxSize = maxSize;
+    public Squad(int size, String squadName, String cause){
+        this.maxSize = size;
         this.squadName = squadName;
         this.cause = cause;
-        allSquads.add(this);
+        instances.add(this);
+        this.squadMembers = new ArrayList<>();
+        this.squadId = instances.size();
+
     }
 
     public int getMaxSize(){
@@ -26,4 +31,6 @@ public class Squad {
     public String getCause(){
         return cause;
     }
+
+
 }
