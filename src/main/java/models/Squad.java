@@ -9,14 +9,16 @@ public class Squad {
     private int squadId;
     private ArrayList<Hero> squadMembers;
     private static ArrayList<Squad> instances = new ArrayList<>();
+    private int currentSize;
 
-    public Squad(int maxSize, String squadName, String cause) {
+    public Squad(Integer maxSize, String squadName, String cause) {
         this.maxSize = maxSize;
         this.squadName = squadName;
         this.cause = cause;
         instances.add(this);
         this.squadMembers = new ArrayList<>();
         this.squadId = instances.size();
+        this.currentSize = 0;
 
     }
 
@@ -49,22 +51,22 @@ public class Squad {
         return squadMembers;
     }
 
-    public void setSquadMembers(Hero newMmember){
-        squadMembers.add(newMmember);
+    public void addSquadMembers(Hero newMember){
+        squadMembers.add(newMember);
+        currentSize++;
     }
-
 
     public void clearAllSquadMembers(){
             getSquadMembers().clear();
         }
 
-    public static Squad setUpNewSquad(){
-        return new Squad(3,"Yellow","Positivity");
-    }
-
-    public static Squad setUpNewSquad1(){
-        return new Squad(5, "Red", "Danger");
-    }
+//    public static void setUpNewSquad(){
+//        new Squad(3, "Yellow", "Positivity");
+//    }
+//
+//    public static void setUpNewSquad1(){
+//        new Squad(5, "Red", "Danger");
+//    }
 
 
 }

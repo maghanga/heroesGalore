@@ -6,16 +6,16 @@ public class Hero {
     private int age;
     private String power;
     private String weakness;
-    private int id;
+    private String heroSquad;
     private static ArrayList<Hero> instances = new ArrayList<>();
 
-    public Hero(String name, Integer age, String power, String weakness){
+    public Hero(String name, Integer age, String power, String weakness, String heroSquad){
         this.name = name;
         this.age = age;
         this.power = power;
         this.weakness = weakness;
+        this.heroSquad = heroSquad;
         instances.add(this);
-        this.id = instances.size();
     }
 
     public String getName(){
@@ -42,19 +42,19 @@ public class Hero {
         instances.clear();
     }
 
-    public int getId(){
-        return id;
+    public String getHeroSquad(){
+        return heroSquad;
     }
 
     public static Hero findById(int id){
         return instances.get(id - 1);
     }
 
-    public static Hero setUpNewHero(){
-        return new Hero("Nehru", 22, "Thought", "Speed");
-    }
-
-    public static Hero setUpNewHero1(){
-        return new Hero("Kayla", 20, "Empathy", "Concentration");
-    }
+//    public static Hero setUpNewHero(){
+//        return new Hero("Nehru", 22, "Thought", "Speed");
+//    }
+//
+//    public static Hero setUpNewHero1(){
+//        return new Hero("Kayla", 20, "Empathy", "Concentration");
+//    }
 }
