@@ -1,5 +1,33 @@
 {{#partial "content"}}
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h4>Heroes</h4>
+            <ol>
+                {{#if heroes}}
+                    {{#each heroes}}
+                        <li>
+                            <h5>Name: </h5>
+                            <p>{{ hero.name }}</p>
+                            <h5>Age: </h5>
+                            <p> {{ hero.age }}</p>
+                            <h5>Power: </h5>
+                            <p>{{ hero.power }}</p>
+                            <h5>Weakness: </h5>
+                            <p>{{ hero.weakness }}</p>
+                            <h5>Squad: </h5>
+                            <p>{{ hero.heroSquad }}</p>
+                        </li>
+                    {{/each}}
+                {{else}}
 
+                    <p>No heroes!</p>
+                {{/if}}
+            </ol>
+        </div>
+
+
+
+    </div>
 
 {{/partial}}
 
