@@ -10,8 +10,8 @@ public class Squad {
     private ArrayList<Hero> squadMembers;
     private static ArrayList<Squad> instances = new ArrayList<>();
 
-    public Squad(int size, String squadName, String cause){
-        this.maxSize = size;
+    public Squad(int maxSize, String squadName, String cause) {
+        this.maxSize = maxSize;
         this.squadName = squadName;
         this.cause = cause;
         instances.add(this);
@@ -20,17 +20,41 @@ public class Squad {
 
     }
 
-    public int getMaxSize(){
+    public int getMaxSize() {
         return maxSize;
     }
 
-    public String getSquadName(){
+    public String getSquadName() {
         return squadName;
     }
 
-    public String getCause(){
+    public String getCause() {
         return cause;
     }
 
+    public static Squad findBySquadId(int squadId) {
+        return instances.get(squadId - 1);
+    }
 
+    public int getSquadId() {
+        return squadId;
+    }
+
+    public static ArrayList<Squad> getInstances() {
+        return instances;
+    }
+
+
+    public ArrayList<Hero> getSquadMembers() {
+        return squadMembers;
+    }
+
+    public void setSquadMembers(Hero newMmember){
+        squadMembers.add(newMmember);
+    }
+
+
+    public void clearAllSquadMembers(){
+            getSquadMembers().clear();
+        }
 }
