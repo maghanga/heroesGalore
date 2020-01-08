@@ -25,7 +25,25 @@
             </ol>
         </div>
 
-
+        <div class="col-md-6 text-center">
+            <h4>Squads</h4>
+            <ol>
+                {{#if squads}}
+                    {{#each squads}}
+                        <li>
+                            <h5>Squad Name: </h5>
+                            <p>{{ squadName }}</p>
+                            <h5>Maximum number: </h5>
+                            <p> {{ maxSize }}</p>
+                            <h5>Purpose: </h5>
+                            <p> {{ cause }}</p>
+                        </li>>
+                    {{/each}}
+                {{else}}
+                    <p>No squads!</p>
+                {{/if}}
+            </ol>
+        </div>
 
     </div>
 
