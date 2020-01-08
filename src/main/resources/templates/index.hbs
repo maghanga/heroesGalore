@@ -1,21 +1,21 @@
 {{#partial "content"}}
     <div class="row">
         <div class="col-md-6 text-center">
-            <h4>Heroes</h4>
+            <h2>Heroes : </h2>
             <ol>
                 {{#if heroes}}
                     {{#each heroes}}
                         <li>
-                            <h5>Name: </h5>
-                            <p>{{ hero.name }}</p>
-                            <h5>Age: </h5>
-                            <p> {{ hero.age }}</p>
-                            <h5>Power: </h5>
-                            <p>{{ hero.power }}</p>
-                            <h5>Weakness: </h5>
-                            <p>{{ hero.weakness }}</p>
-                            <h5>Squad: </h5>
-                            <p>{{ hero.heroSquad }}</p>
+                            <h3>Name: </h3>
+                            <p>{{ name }}</p>
+                            <h3>Age: </h3>
+                            <p> {{ age }}</p>
+                            <h3>Power: </h3>
+                            <p>{{ power }}</p>
+                            <h3>Weakness: </h3>
+                            <p>{{ weakness }}</p>
+                            <h3>Squad: </h3>
+                            <p>{{ heroSquad }}</p>
                         </li>
                     {{/each}}
                 {{else}}
@@ -26,18 +26,18 @@
         </div>
 
         <div class="col-md-6 text-center">
-            <h4>Squads</h4>
+            <h2>Squads : </h2>
             <ol>
                 {{#if squads}}
                     {{#each squads}}
                         <li>
-                            <h5>Squad Name: </h5>
+                            <h3>Squad Name: </h3>
                             <p>{{ squadName }}</p>
-                            <h5>Maximum number: </h5>
+                            <h3>Maximum number: </h3>
                             <p> {{ maxSize }}</p>
-                            <h5>Purpose: </h5>
+                            <h3>Purpose: </h3>
                             <p> {{ cause }}</p>
-                        </li>>
+                        </li>
                     {{/each}}
                 {{else}}
                     <p>No squads!</p>

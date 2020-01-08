@@ -22,3 +22,6 @@ body {
     margin-right: auto;
     width: 45%;
 }
+h2 {
+    text-decoration: underline;
+}

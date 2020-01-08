@@ -1,6 +1,6 @@
 {{#partial "content"}}
     <div class="card">
-        <form action="/hero/success" method="post" name="heroForm">
+        <form action="/hero/new" method="post" name="heroForm">
 
             <p>Name: </p>
             <input class="form-control" type="text" placeholder="Insert name of hero" name="name">
@@ -31,23 +31,24 @@
 
             <br>
 
-            <select class="form-control" name="heroSquad" data-placeholder="Assign hero to Squad">
-                {{#if heroSquad}}
+            <select class="form-control select2" name="heroSquad" data-placeholder="Assign hero to Squad">
+                {{#if squads}}
+
                     <option label="- Assign to Squad -"></option>
-                {{/if}}
 
-                {{#if }}
-                    <option name="findSquadName" value="Squad.getBySquadId()">{{ squadName }}</option>
-                {{/if}}
+                    {{#each squads}}
+                    <option value="{{ squadId }}">{{ squadName }}</option>
+                        {{/each}}
 
-                {{#if}}
+                    {{else}}
                     <option label="- No Squads Created -"></option>
-                {{/if}}
+                    {{/if}}
+
             </select>
 
             <br>
 
-            <button type="submit" class="btn btn-success btn-xs"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add Character</button>
+            <button type="submit" class="btn btn-success btn-xs"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add Hero</button>
         </form>
     </div>
 {{/partial}}

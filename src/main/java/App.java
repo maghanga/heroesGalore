@@ -11,11 +11,19 @@ public class App {
 
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
+            ArrayList<Squad> allSquads = Squad.getInstances();
+            ArrayList<Hero> allHeroes = Hero.getAllHeroes();
+            model.put("squads", allSquads);
+            model.put("heroes", allHeroes);
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/hero", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
+            ArrayList<Squad> allSquads = Squad.getInstances();
+            ArrayList<Hero> allHeroes = Hero.getAllHeroes();
+            model.put("squads", allSquads);
+            model.put("heroes", allHeroes);
             return new ModelAndView(model, "hero.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -38,17 +46,20 @@ public class App {
 //            model.put("squads",squads);
 //            ArrayList<Hero> members = Hero.getAllHeroes();
 //            model.put("heroes",members);
-//            Squad newSquad = Squad.findBySquadId(1);
+//            Squad newSquad = Squad.getBySquadId(1);
 //            model.put("allSquadMembers", newSquad.getSquadMembers());
-//            return new ModelAndView(model, "squad.hbs");
+//            return new ModelAndView(model, "viewSquad.hbs");
 //        }, new HandlebarsTemplateEngine());
 
         post("/squad/new",(req,res)-> {
             Map<String, Object> model = new HashMap<>();
             String squadName = req.queryParams("squadName");
-            Integer size = Integer.parseInt(req.queryParams("maxSize"));
+            Integer maxSize = Integer.parseInt(req.queryParams("maxSize"));
             String cause = req.queryParams("cause");
-            Squad newSquad = new Squad(size, squadName,cause);
+            Squad newSquad = new Squad(maxSize, squadName,cause);
+            model.put("squadName", squadName);
+            model.put("maxSize", maxSize);
+            model.put("cause", cause);
             return new ModelAndView(model,"squadSuccess.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -62,16 +73,18 @@ public class App {
             Hero newHero = new Hero(name,age,power,weakness,heroSquad);
             Squad newSquad = Squad.getBySquadId(Integer.parseInt(heroSquad));
             newSquad.addSquadMembers(newHero);
+            model.put("newSquad", newSquad);
             return new ModelAndView(model, "heroSuccess.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("hero/createHero/new/member/:squadId",(req,res)->{
-            Map<String, Object> model = new HashMap<>();
-            req.session().attribute("selectedSquad",req.params("squadId"));
-            model.put("selectedSquad", req.session().attribute("selectedSquad"));
-            model.put("item",1);
-            return new ModelAndView(model, "squadAssigned.hbs");
-        },new HandlebarsTemplateEngine());
+
+//        get("hero/createHero/new/member/:squadId",(req,res)->{
+//            Map<String, Object> model = new HashMap<>();
+//            req.session().attribute("selectedSquad",req.params("squadId"));
+//            model.put("selectedSquad", req.session().attribute("selectedSquad"));
+//            model.put("item",1);
+//            return new ModelAndView(model, "squadAssigned.hbs");
+//        },new HandlebarsTemplateEngine());
 
     }
 }

@@ -60,13 +60,13 @@ public class Squad {
             getSquadMembers().clear();
         }
 
-//    public static void setUpNewSquad(){
-//        new Squad(3, "Yellow", "Positivity");
-//    }
-//
-//    public static void setUpNewSquad1(){
-//        new Squad(5, "Red", "Danger");
-//    }
+    public static void setUpNewSquad(){
+        new Squad(3, "Yellow", "Positivity");
+    }
+
+    public static void setUpNewSquad1(){
+        new Squad(5, "Red", "Danger");
+    }
 
 
 }

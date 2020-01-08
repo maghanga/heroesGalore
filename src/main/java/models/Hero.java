@@ -50,11 +50,11 @@ public class Hero {
         return instances.get(id - 1);
     }
 
-//    public static Hero setUpNewHero(){
-//        return new Hero("Nehru", 22, "Thought", "Speed");
-//    }
-//
-//    public static Hero setUpNewHero1(){
-//        return new Hero("Kayla", 20, "Empathy", "Concentration");
-//    }
+    public static Hero setUpNewHero(){
+        return new Hero("Nehru", 22, "Thought", "Speed", "yellow");
+    }
+
+    public static Hero setUpNewHero1(){
+        return new Hero("Kayla", 20, "Empathy", "Concentration", "red");
+    }
 }
