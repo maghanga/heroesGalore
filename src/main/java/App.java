@@ -49,8 +49,6 @@ public class App {
             Integer size = Integer.parseInt(req.queryParams("maxSize"));
             String cause = req.queryParams("cause");
             Squad newSquad = new Squad(size, squadName,cause);
-            req.session().attribute("item",squadName);
-            model.put("item",req.session().attribute("item"));
             return new ModelAndView(model,"success.hbs");
         }, new HandlebarsTemplateEngine());
 
