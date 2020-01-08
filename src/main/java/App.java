@@ -49,7 +49,7 @@ public class App {
             Integer size = Integer.parseInt(req.queryParams("maxSize"));
             String cause = req.queryParams("cause");
             Squad newSquad = new Squad(size, squadName,cause);
-            return new ModelAndView(model,"success.hbs");
+            return new ModelAndView(model,"squadSuccess.hbs");
         }, new HandlebarsTemplateEngine());
 
         post("/hero/new",(req, res) ->{
@@ -62,7 +62,7 @@ public class App {
             Hero newHero = new Hero(name,age,power,weakness,heroSquad);
             Squad newSquad = Squad.getBySquadId(Integer.parseInt(heroSquad));
             newSquad.addSquadMembers(newHero);
-            return new ModelAndView(model, "success.hbs");
+            return new ModelAndView(model, "heroSuccess.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("hero/createHero/new/member/:squadId",(req,res)->{
