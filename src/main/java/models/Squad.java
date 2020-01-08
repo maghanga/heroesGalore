@@ -8,10 +8,22 @@ public class Squad {
     private String cause;
     private static ArrayList<Squad> allSquads = new ArrayList<>();
 
-    public Squad(Integer maxSize, String squadName, String cause){
+    public Squad(int maxSize, String squadName, String cause){
         this.maxSize = maxSize;
         this.squadName = squadName;
         this.cause = cause;
         allSquads.add(this);
+    }
+
+    public int getMaxSize(){
+        return maxSize;
+    }
+
+    public String getSquadName(){
+        return squadName;
+    }
+
+    public String getCause(){
+        return cause;
     }
 }
