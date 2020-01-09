@@ -1,0 +1,56 @@
+{{#partial "content"}}
+    <div class="card">
+        <form action="/hero/new" method="post" name="heroForm">
+
+            <p>Name: </p>
+            <input class="form-control" type="text" placeholder="Insert name of hero" name="name">
+            <br>
+
+            <p>Age: </p>
+            <input class="form-control" name="age" placeholder="Insert age of hero" type="number"/>
+
+            <br>
+
+            <select class="form-control" name="power" data-placeholder="Select Power">
+                <option label="- Select Power -"></option>
+                <option value="Speed">Speed</option>
+                <option value="Strength">Strength</option>
+                <option value="Charisma">Charisma</option>
+                <option value="Thought">Thought</option>
+            </select>
+
+            <br>
+
+            <select class="form-control" name="weakness" data-placeholder="Select Weakness">
+                <option label="- Select Weakness -"></option>
+                <option value="Concentration">Concentration</option>
+                <option value="Pride">Pride</option>
+                <option value="Slow">Slow</option>
+                <option value="Handicapped">Handicapped</option>
+            </select>
+
+            <br>
+
+            <select class="form-control select2" name="heroSquad" data-placeholder="Assign hero to Squad">
+                {{#if squads}}
+
+                    <option label="- Assign to Squad -"></option>
+
+                    {{#each squads}}
+                    <option value="{{ squadId }}">{{ squadName }}</option>
+                        {{/each}}
+
+                    {{else}}
+                    <option label="- No Squads Created -"></option>
+                    {{/if}}
+
+            </select>
+
+            <br>
+
+            <button type="submit" class="btn btn-success btn-xs"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add Hero</button>
+        </form>
+    </div>
+{{/partial}}
+
+{{> layout.hbs}}

@@ -1,0 +1,52 @@
+{{#partial "content"}}
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h2>Heroes : </h2>
+            <ol>
+                {{#if heroes}}
+                    {{#each heroes}}
+                        <li>
+                            <h3>Name: </h3>
+                            <p>{{ name }}</p>
+                            <h3>Age: </h3>
+                            <p> {{ age }}</p>
+                            <h3>Power: </h3>
+                            <p>{{ power }}</p>
+                            <h3>Weakness: </h3>
+                            <p>{{ weakness }}</p>
+                            <h3>Squad: </h3>
+                            <p>{{ heroSquad }}</p>
+                        </li>
+                    {{/each}}
+                {{else}}
+
+                    <p>No heroes!</p>
+                {{/if}}
+            </ol>
+        </div>
+
+        <div class="col-md-6 text-center">
+            <h2>Squads : </h2>
+            <ol>
+                {{#if squads}}
+                    {{#each squads}}
+                        <li>
+                            <h3>Squad Name: </h3>
+                            <p>{{ squadName }}</p>
+                            <h3>Maximum number: </h3>
+                            <p> {{ maxSize }}</p>
+                            <h3>Purpose: </h3>
+                            <p> {{ cause }}</p>
+                        </li>
+                    {{/each}}
+                {{else}}
+                    <p>No squads!</p>
+                {{/if}}
+            </ol>
+        </div>
+
+    </div>
+
+{{/partial}}
+
+{{> layout.hbs}}

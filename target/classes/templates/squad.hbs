@@ -1,0 +1,28 @@
+{{#partial "content"}}
+    <form action="/squad/new" method="post" name="squadForm">
+
+        <input class="form-control" type="text" placeholder="Insert name of squad" name="squadName">
+
+        <br>
+
+        <p class="label">Max Size: </p>
+        <input class="form-control" type="text" placeholder="Insert maximum size of squad" name="maxSize"/>
+
+        <br>
+
+        <select class="form-control" data-placeholder="Squad Cause" name="cause">
+            <option label="- Cause -"></option>
+            <option value="Hackers">Hacking corporate organisations</option>
+            <option value="Hitmen">Hitmen for hire</option>
+            <option value="Vigilante">Fighting crime</option>
+        </select>
+
+        <br>
+
+        <button type="submit" class="btn btn-outline-success"><i aria-hidden="true"></i>&nbsp;&nbsp;Create Squad</button>
+
+    </form>
+
+{{/partial}}
+
+{{> layout.hbs}}
